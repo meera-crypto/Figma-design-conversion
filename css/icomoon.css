@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "icomoon";
+  src:
+    url("../fonts/icomoon/icomoon.woff2") format("woff2"),
+    url("../fonts/icomoon/icomoon.ttf") format("truetype"),
+    url("../fonts/icomoon/icomoon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-palette-values --palette0 {
+  font-family: "icomoon";
+  base-palette: 0;
+}
+
+.icon,
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  color: inherit;
+
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.palette0 {
+  font-palette: --palette0;
+  color: inherit;
+}
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  color: inherit;
+}
+
+.icon-send:before {
+  content: "\f00b";
+}
+.icon-clubs:before {
+  content: "\f009";
+}
+.icon-members:before {
+  content: "\f007";
+}
+.icon-youtube:before {
+  content: "\f003";
+}
+.icon-dribble:before {
+  content: "\f004";
+}
+.icon-instagram:before {
+  content: "\f005";
+}
+.icon-arrow-right:before {
+  content: "\f006";
+}
+.icon-twitter:before {
+  content: "\f008";
+}
+.icon-associations:before {
+  content: "\f012";
+}
+.icon-membership:before {
+  content: "\f013";
+}
+.icon-clubs-groups:before {
+  content: "\f000";
+}
+.icon-payments:before {
+  content: "\f001";
+}
+.icon-booking:before {
+  content: "\f002";
+}
+
+.icon-arrow-right::before {
+  color: #ffffff;
+}

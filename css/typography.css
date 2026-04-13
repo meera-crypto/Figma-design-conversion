@@ -1,0 +1,32 @@
+:root {
+  --font-primary: "Inter", sans-serif;
+
+  --primary-color: #4caf4f;
+  --primary-dark: #438443;
+
+  --neutral-color: #f5f7fa;
+  --neutral-black: #263238;
+  --neutral-gray: #89939e;
+
+  --navigation-text: #18191f;
+  --heading-text: #4d4d4d;
+  --body-text: #717171;
+  --text-gray: #d9dbe1;
+
+  --default-color: #ffff;
+  --default-color-transparent: rgb(255 255 255/0.3);
+
+  /* Font sizes */
+  --fs-h1: 4rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.75rem;
+  --fs-h4: 1.25rem;
+
+  --fs-h1-mobile: 2.4rem;
+  --fs-h2-mobile: 1.75rem;
+  --fs-h3-mobile: 1.375rem;
+  --fs-h4-mobile: 1.125rem;
+
+  --fs-body: 1rem;
+  --fs-body-sm: 0.875rem;
+}
