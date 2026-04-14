@@ -182,6 +182,7 @@ button {
 
 .logo {
   width: 160px;
+  margin-right: auto;
 }
 
 /* Header */
@@ -197,6 +198,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
+  gap: 20px;
 }
 
 /* Hamburger (Mobile First) */
@@ -234,11 +236,10 @@ header {
 }
 
 /* Navigation List */
-
 .nav-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   margin: 0 0 32px;
   padding: 0;
 }
@@ -263,6 +264,12 @@ header {
 .btn-header {
   border-radius: 6px;
   padding: 10px 20px;
+}
+
+.btn-demo,
+.btn-register,
+.btn-learn-more {
+  margin-top: 32px;
 }
 
 /* Close Button */
@@ -306,6 +313,10 @@ header {
   color: var(--primary-color);
 }
 
+.hero-illustration {
+  max-width: 100%;
+}
+
 /* client section*/
 .our-client-content {
   display: flex;
@@ -333,7 +344,6 @@ header {
 /* feature Card Styling */
 .feature-cards {
   display: grid;
-  margin-top: 40px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -352,6 +362,7 @@ header {
 
 .feature-card {
   gap: 16px;
+  max-width: 299px;
 }
 
 /* Icons - feature cards*/
@@ -375,6 +386,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
+  margin-top: 32px;
 }
 
 /* Statistics section */
@@ -412,6 +424,7 @@ header {
 
 .stat-item span {
   font-size: 38px;
+  padding: 10px;
 }
 
 .stat-number h3,
@@ -452,7 +465,6 @@ header {
 }
 
 /* Meet customers */
-
 .meet-customers {
   display: flex;
   flex-direction: column;
@@ -482,8 +494,6 @@ header {
 .marketing-content-cards {
   display: grid;
   grid-template-columns: 1fr;
-  /* gap: 24px; */
-  /* padding-bottom: 48px; */
 }
 
 .marketing-card {
@@ -538,10 +548,6 @@ header {
 
 .demo-section-content h2 {
   color: var(--neutral-black);
-}
-
-.btn-demo {
-  margin-top: 32px;
 }
 
 /* Footer */
@@ -643,17 +649,6 @@ footer {
   font-size: 18px;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 .footer-content {
   display: grid;
   gap: 2rem;
@@ -680,6 +675,21 @@ footer {
   grid-area: d;
 }
 
+.company-support-list ul li {
+  margin-bottom: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Min-width -  767px */
 @media (min-width: 767px) {
   /* Header */
@@ -687,6 +697,7 @@ footer {
     flex-direction: row;
     align-items: center;
     max-width: 100%;
+    padding: 40px 0;
   }
 
   .hero-text {
@@ -760,10 +771,6 @@ footer {
 
   /* Header */
   .nav-menu {
-    display: flex;
-  }
-
-  .nav-menu {
     position: static;
     transform: none;
     width: auto;
@@ -782,6 +789,7 @@ footer {
 
   .nav-actions {
     flex-direction: row;
+    margin-left: 60px;
   }
 
   .header-buttons {
@@ -799,6 +807,8 @@ footer {
 
   .feature-cards {
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
   }
 
   .statistics-content-wrapper {

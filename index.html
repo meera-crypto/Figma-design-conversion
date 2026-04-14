@@ -20,7 +20,22 @@
       type="image/svg+xml"
     />
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="preload"
+      href="fonts/inter-v20-latin-regular.woff2"
+      as="font"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="css/styles.css"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="css/styles.css" />
+    </noscript>
+
     <link rel="stylesheet" href="css/icomoon.css" />
     <link rel="stylesheet" href="css/typography.css" />
   </head>
@@ -95,7 +110,9 @@
                 Where to grow your business as a photographer: site or social
                 media?
               </p>
-              <button type="button" class="btn-primary">Register</button>
+              <button type="button" class="btn-primary btn-register">
+                Register
+              </button>
             </div>
 
             <picture class="hero-illustration">
@@ -290,7 +307,9 @@
                 Praesent felis est, finibus et nisi ac, hendrerit venenatis
                 libero. Donec consectetur faucibus ipsum id gravida.
               </p>
-              <button type="button" class="btn-primary">Learn More</button>
+              <button type="button" class="btn-primary btn-learn-more">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
@@ -480,22 +499,22 @@
 
             <ul class="social-media-icons">
               <li>
-                <a href="#">
+                <a href="#" aria-label="Visit our Instagram page">
                   <span class="icon-instagram" aria-hidden="true"></span
                 ></a>
               </li>
               <li>
-                <a href="#">
+                <a href="#" aria-label="Visit our Dribble channel">
                   <span class="icon-dribble" aria-hidden="true"></span
                 ></a>
               </li>
               <li>
-                <a href="#">
+                <a href="#" aria-label="Visit our Twitter page">
                   <span class="icon-twitter" aria-hidden="true"></span
                 ></a>
               </li>
               <li>
-                <a href="#">
+                <a href="#" aria-label="Visit our YouTube channel">
                   <span class="icon-youtube" aria-hidden="true"></span
                 ></a>
               </li>
