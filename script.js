@@ -1,20 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger menu and close button
+  // Navigation
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
   const overlay = document.querySelector(".menu-overlay");
   const closeBtn = document.querySelector(".menu-close");
 
-  // Footer email validation
+  // Footer Email
   const form = document.querySelector(".email-form");
   const emailInput = document.getElementById("email");
   const errorText = document.getElementById("emailError");
   const emailWrapper = document.querySelector(".input-email-field");
 
-  // counter for statistics
+  // Counter
   const counters = document.querySelectorAll(".counter");
 
-  // hamburger active
+  // Modals
+  const modalButtons = document.querySelectorAll("[data-modal]");
+  const modals = document.querySelectorAll(".modal");
+  const modalOverlay = document.getElementById("modalOverlay");
+  const closeButtons = document.querySelectorAll("[data-close]");
+
+  const modalForms = document.querySelectorAll(".modal-form");
+
+  /* UTIL FUNCTIONS*/
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateName(name) {
+    return /^[a-zA-Z\s]{2,}$/.test(name);
+  }
+
+  function validatePassword(password) {
+    return password.length >= 6;
+  }
+
+  function showError(input, message) {
+    let error = input.nextElementSibling;
+
+    if (!error || !error.classList.contains("field-error")) {
+      error = document.createElement("small");
+      error.classList.add("field-error");
+      input.after(error);
+    }
+
+    error.textContent = message;
+    input.classList.add("input-error");
+  }
+
+  function clearError(input) {
+    input.classList.remove("input-error");
+
+    const error = input.nextElementSibling;
+
+    if (error && error.classList.contains("field-error")) {
+      error.textContent = "";
+    }
+  }
+
+  /* HAMBURGER MENU */
+
   hamburger.addEventListener("click", () => {
     const isOpen = hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
@@ -23,19 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.setAttribute("aria-expanded", isOpen);
   });
 
-  // close hamburger
   function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
     overlay.classList.remove("active");
     hamburger.setAttribute("aria-expanded", false);
   }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
-  });
 
   closeBtn.addEventListener("click", closeMenu);
   overlay.addEventListener("click", closeMenu);
@@ -49,10 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Footer email validation
-  function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
+  /* FOOTER EMAIL VALIDATION */
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -76,7 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
     emailWrapper.classList.add("input-success");
   });
 
-  // counter for statistics
+  /* COUNTER ANIMATION */
+
   const animateCounter = (counter) => {
     const target = +counter.getAttribute("data-target");
     let count = 0;
@@ -110,11 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   );
 
-  counters.forEach((counter) => {
-    observer.observe(counter);
-  });
+  counters.forEach((counter) => observer.observe(counter));
 
-  // Marquee for logos
+  /* CLIENT LOGO MARQUEE */
+
   window.addEventListener("load", () => {
     const slider = document.querySelector(".client-slider");
     const logos = document.getElementById("clientLogos");
@@ -122,28 +158,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const sliderWidth = slider.offsetWidth;
     let logosWidth = logos.scrollWidth;
 
-    // Duplicate until enough width
     while (logosWidth < sliderWidth * 2) {
       logos.innerHTML += logos.innerHTML;
       logosWidth = logos.scrollWidth;
     }
   });
 
-  const modalButtons = document.querySelectorAll("[data-modal]");
-  const modals = document.querySelectorAll(".modal");
-  const modalOverlay = document.getElementById("modalOverlay");
-  const closeButtons = document.querySelectorAll("[data-close]");
+  /* MODALS */
 
-  // Open modal
+  let lastFocusedButton;
   modalButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      lastFocusedElement = button;
+
       const modalId = button.dataset.modal;
-      document.getElementById(modalId).classList.add("active");
+      const modal = document.getElementById(modalId);
+
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+
       modalOverlay.classList.add("active");
+
+      const firstField = modal.querySelector("input");
+
+      if (firstField) {
+        setTimeout(() => firstField.focus(), 100);
+      }
     });
   });
 
-  // Close modal
   closeButtons.forEach((btn) => {
     btn.addEventListener("click", closeModal);
   });
@@ -151,51 +194,101 @@ document.addEventListener("DOMContentLoaded", () => {
   modalOverlay.addEventListener("click", closeModal);
 
   function closeModal() {
-    modals.forEach((modal) => modal.classList.remove("active"));
+    modals.forEach((modal) => {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+    });
+
     modalOverlay.classList.remove("active");
+
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
   }
 
-  // ESC key close
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape") {
+      closeMenu();
+      closeModal();
+    }
   });
 
-  // Modal Email Validation
-  const modalForms = document.querySelectorAll(".modal-form");
+  /* MODAL FORM VALIDATION */
 
   modalForms.forEach((form) => {
-    const emailInput = form.querySelector('input[type="email"]');
+    const inputs = form.querySelectorAll("input");
 
-    if (!emailInput) return;
-
-    const error = document.createElement("small");
-    error.classList.add("email-error");
-    emailInput.after(error);
-
-    emailInput.addEventListener("input", () => {
-      error.textContent = "";
-      emailInput.classList.remove("input-error");
+    inputs.forEach((input) => {
+      input.addEventListener("input", () => clearError(input));
     });
 
     form.addEventListener("submit", (e) => {
-      const emailValue = emailInput.value.trim();
+      let isValid = true;
 
-      if (emailValue === "") {
-        e.preventDefault();
-        error.textContent = "Email is required";
-        emailInput.classList.add("input-error");
-        return;
-      }
+      inputs.forEach((input) => {
+        const value = input.value.trim();
 
-      if (!validateEmail(emailValue)) {
-        e.preventDefault();
-        error.textContent = "Enter a valid email address";
-        emailInput.classList.add("input-error");
-        return;
-      }
+        if (input.type === "text") {
+          if (!validateName(value)) {
+            showError(input, "Enter valid name");
+            isValid = false;
+          }
+        }
 
-      error.textContent = "";
-      emailInput.classList.remove("input-error");
+        if (input.type === "email") {
+          if (!validateEmail(value)) {
+            showError(input, "Enter valid email");
+            isValid = false;
+          }
+        }
+
+        if (input.type === "password") {
+          if (!validatePassword(value)) {
+            showError(input, "Minimum 6 characters");
+            isValid = false;
+          }
+        }
+      });
+
+      if (!isValid) e.preventDefault();
+    });
+
+    /* ENTER KEY NAVIGATION */
+
+    inputs.forEach((input, index) => {
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+
+          const value = input.value.trim();
+          let isValid = true;
+
+          if (input.type === "text" && !validateName(value)) {
+            showError(input, "Enter valid name");
+            isValid = false;
+          }
+
+          if (input.type === "email" && !validateEmail(value)) {
+            showError(input, "Enter valid email");
+            isValid = false;
+          }
+
+          if (input.type === "password" && !validatePassword(value)) {
+            showError(input, "Minimum 6 characters");
+            isValid = false;
+          }
+
+          if (!isValid) return;
+
+          const nextInput = inputs[index + 1];
+
+          if (nextInput) {
+            nextInput.focus();
+          } else {
+            form.querySelector("button[type='submit']").click();
+          }
+        }
+      });
     });
   });
 });
