@@ -35,6 +35,7 @@ button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(76, 175, 79, 0.2);
 }
 
 h1,
@@ -118,6 +119,20 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+/* Focus */
+a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Active */
+a:active {
+  color: var(--primary-dark);
+  transform: translateY(1px);
 }
 
 li {
@@ -582,6 +597,9 @@ footer {
   border-radius: 100%;
   text-decoration: none;
 }
+.social-media-icons a:hover {
+  background: var(--primary-color);
+}
 
 .social-media-icons a:focus-visible {
   outline: 2px solid var(--primary-color);
@@ -687,8 +705,17 @@ footer {
 
 /* Min-width -  767px */
 @media (min-width: 767px) {
+  /* images aspect ratio */
   .hero-illustration {
     aspect-ratio: 391 / 407;
+  }
+
+  .pixelgrade-illustration {
+    aspect-ratio: 442 / 329;
+  }
+
+  .footer-designer-illustration {
+    aspect-ratio: 442 / 433;
   }
 
   .hero-content {
