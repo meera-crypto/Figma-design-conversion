@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Nexcent" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
     <title>Lessons and insights from 8 years | Nexcent</title>
 
     <meta
@@ -23,10 +28,25 @@
     <!-- Roboto font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
+
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Styles -->
     <link
       rel="preload"
       href="css/styles.css"
@@ -160,6 +180,7 @@
                     alt=""
                     width="48"
                     height="48"
+                    loading="lazy"
                   />
                 </li>
                 <li>
@@ -168,6 +189,7 @@
                     alt=""
                     width="48"
                     height="48"
+                    loading="lazy"
                   />
                 </li>
                 <li>
@@ -176,6 +198,7 @@
                     alt=""
                     width="48"
                     height="48"
+                    loading="lazy"
                   />
                 </li>
                 <li>
@@ -184,6 +207,7 @@
                     alt=""
                     width="48"
                     height="48"
+                    loading="lazy"
                   />
                 </li>
                 <li>
@@ -192,6 +216,7 @@
                     alt=""
                     width="48"
                     height="48"
+                    loading="lazy"
                   />
                 </li>
                 <li>
@@ -200,6 +225,7 @@
                     alt=""
                     width="48"
                     height="48"
+                    loading="lazy"
                   />
                 </li>
               </ul>
@@ -381,6 +407,7 @@
                   loading="lazy"
                   height="326"
                   width="326"
+                  loading="lazy"
                 />
               </picture>
             </div>
@@ -410,6 +437,7 @@
                       alt=""
                       width="48"
                       height="48"
+                      loading="lazy"
                     />
                   </li>
                   <li>
@@ -418,6 +446,7 @@
                       alt=""
                       width="48"
                       height="48"
+                      loading="lazy"
                     />
                   </li>
                   <li>
@@ -426,6 +455,7 @@
                       alt=""
                       width="48"
                       height="48"
+                      loading="lazy"
                     />
                   </li>
                   <li>
@@ -434,6 +464,7 @@
                       alt=""
                       width="48"
                       height="48"
+                      loading="lazy"
                     />
                   </li>
                   <li>
@@ -442,6 +473,7 @@
                       alt=""
                       width="48"
                       height="48"
+                      loading="lazy"
                     />
                   </li>
                   <li>
@@ -450,11 +482,12 @@
                       alt=""
                       width="48"
                       height="48"
+                      loading="lazy"
                     />
                   </li>
                 </ul>
 
-                <div>
+                <div class="meet-customers-link">
                   <a href="#" class="custom-link"
                     >Meet all customers
                     <span class="icon-arrow-right" aria-hidden="true"></span
@@ -593,7 +626,7 @@
                 alt="Nexcent logo"
                 width="160"
                 height="25"
-                fetchpriority="high"
+                loading="lazy"
               />
             </a>
             <div class="copyright">
@@ -687,7 +720,7 @@
                   <span class="icon-send" aria-hidden="true"></span>
                 </button>
               </div>
-              <small class="error-message" id="emailError"></small>
+              <small class="emailError"></small>
             </form>
           </div>
         </div>
@@ -697,29 +730,40 @@
     <!-- Modal Overlay -->
     <div class="modal-overlay" id="modalOverlay"></div>
     <!-- Login Modal -->
-    <div class="modal" id="loginModal" role="dialog" aria-modal="true">
+    <div
+      class="modal"
+      id="loginModal"
+      role="dialog"
+      aria-modal="true"
+      tabindex="-1"
+    >
       <div class="modal-content">
         <button class="modal-close" data-close>&times;</button>
         <h3>Login</h3>
-        <form class="modal-form" novalidate>
-          <label for="loginEmail" class="visually-hidden">Email</label>
-          <input
-            type="email"
-            id="loginEmail"
-            name="loginEmail"
-            placeholder="Email address"
-            required
-          />
-          <small class="error-message" id="emailError"></small>
 
-          <label for="loginPassword" class="visually-hidden">Password</label>
-          <input
-            type="password"
-            id="loginPassword"
-            name="loginPassword"
-            placeholder="Password"
-            required
-          />
+        <form class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              name="loginEmail"
+              placeholder="Email address"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="loginPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
 
           <button type="submit" class="btn-primary">Login</button>
         </form>
@@ -732,41 +776,47 @@
       id="signupModal"
       aria-hidden="true"
       role="dialog"
-      aria-modal="true"
+      tabindex="-1"
     >
       <div class="modal-content">
         <button class="modal-close" data-close>&times;</button>
         <h3>Create Account</h3>
 
         <form class="modal-form" novalidate>
-          <label for="signupName" class="visually-hidden">Full Name</label>
-          <input
-            type="text"
-            id="signupName"
-            name="signupName"
-            placeholder="Full Name"
-            required
-          />
-          <small class="error-message" id="emailError"></small>
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input
+              type="text"
+              id="signupName"
+              name="signupName"
+              placeholder="Full Name"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
 
-          <label for="signupEmail" class="visually-hidden">Email</label>
-          <input
-            type="email"
-            id="signupEmail"
-            name="signupEmail"
-            placeholder="Email address"
-            required
-          />
-          <small class="error-message" id="emailError"></small>
+          <div class="form-group">
+            <label for="signupEmail">Email</label>
+            <input
+              type="email"
+              id="signupEmail"
+              name="signupEmail"
+              placeholder="Email address"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
 
-          <label for="signupPassword" class="visually-hidden">Password</label>
-          <input
-            type="password"
-            id="signupPassword"
-            name="signupPassword"
-            placeholder="Password"
-            required
-          />
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input
+              type="password"
+              id="signupPassword"
+              name="signupPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
 
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
@@ -774,30 +824,34 @@
     </div>
 
     <!-- Demo Modal -->
-    <div class="modal" id="demoModal" aria-hidden="true">
+    <div class="modal" id="demoModal" aria-hidden="true" tabindex="-1">
       <div class="modal-content">
         <button class="modal-close" data-close>&times;</button>
         <h3>Request Demo</h3>
 
         <form class="modal-form" novalidate>
-          <label for="companyName" class="visually-hidden">Company Name</label>
-          <input
-            type="text"
-            id="companyName"
-            name="companyName"
-            placeholder="Company Name"
-            required
-          />
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input
+              type="text"
+              id="companyName"
+              name="companyName"
+              placeholder="Company Name"
+              required
+            />
+          </div>
 
-          <label for="demoEmail" class="visually-hidden">Work Email</label>
-          <input
-            type="email"
-            id="demoEmail"
-            name="demoEmail"
-            placeholder="Work Email"
-            required
-          />
-          <small class="error-message" id="emailError"></small>
+          <div class="form-group">
+            <label for="demoEmail">Work Email</label>
+            <input
+              type="email"
+              id="demoEmail"
+              name="demoEmail"
+              placeholder="Work Email"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
 
           <button type="submit" class="btn-primary">Request Demo</button>
         </form>

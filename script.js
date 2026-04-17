@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Footer Email
   const form = document.querySelector(".email-form");
   const emailInput = document.getElementById("email");
-  const errorText = document.getElementById("emailError");
+  const errorText = form.querySelector(".emailError");
   const emailWrapper = document.querySelector(".input-email-field");
 
   // Counter

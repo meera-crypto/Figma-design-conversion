@@ -687,7 +687,10 @@ footer {
 
 /* Min-width -  767px */
 @media (min-width: 767px) {
-  /* Header */
+  .hero-illustration {
+    aspect-ratio: 391 / 407;
+  }
+
   .hero-content {
     flex-direction: row;
     align-items: center;
@@ -899,12 +902,14 @@ footer {
   width: 90%;
   max-width: 420px;
   transition: 0.3s ease;
+  display: none;
 }
 
 .modal.active {
   transform: translate(-50%, -50%);
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 
 .modal-content {
@@ -927,7 +932,7 @@ footer {
 .modal-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -946,24 +951,14 @@ footer {
   border-color: var(--default-success);
 }
 
-.modal-form small {
-  margin-top: -10px;
+/* Form group layout */
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-/* from here */
-
-.modal {
-  display: none;
-}
-
-.modal.active {
-  display: block;
-}
-
-.modal-overlay {
-  display: none;
-}
-
-.modal-overlay.active {
-  display: block;
+/* Required star */
+.modal-form label:has(+ input[required])::after {
+  content: " *";
+  color: var(--default-error);
 }
