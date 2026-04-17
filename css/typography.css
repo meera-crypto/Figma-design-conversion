@@ -1,5 +1,5 @@
 :root {
-  --font-primary: "Inter", sans-serif;
+  --font-primary: "Roboto", sans-serif;
 
   --primary-color: #4caf4f;
   --primary-dark: #438443;
@@ -14,6 +14,8 @@
   --text-gray: #d9dbe1;
 
   --default-color: #ffff;
+  --default-error: #ff7d7a;
+  --default-success: #4caf50;
   --default-color-transparent: rgb(255 255 255/0.3);
 
   /* Font sizes */

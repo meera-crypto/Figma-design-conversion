@@ -1,0 +1,52 @@
+/* Client Logos  */
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.client-slider:hover .client-logos {
+  animation-play-state: paused;
+}
+
+.client-logos {
+  animation: scroll 40s linear infinite;
+}
+
+/*Horizontal Scroll */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  margin-inline: -5%;
+  padding-inline: 5%;
+}
+
+.horizontal-scroll > * {
+  flex: 0 0 85%;
+  min-width: 260px;
+}
+
+/* Hide scrollbar */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll {
+  scrollbar-width: none;
+}
+
+@media (min-width: 767px) {
+  .horizontal-scroll {
+    display: grid;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .horizontal-scroll > * {
+    flex: unset;
+    min-width: auto;
+  }
+}

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Nexcent" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
     <title>Lessons and insights from 8 years | Nexcent</title>
 
     <meta
@@ -20,12 +25,23 @@
       type="image/svg+xml"
     />
 
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      rel="preload"
-      href="fonts/inter-v20-latin-regular.woff2"
-      as="font"
-      crossorigin
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
+
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Styles -->
     <link
       rel="preload"
       href="css/styles.css"
@@ -51,6 +67,8 @@
             <img
               src="assets/logo.svg"
               alt="Nexcent logo"
+              width="160"
+              height="25"
               fetchpriority="high"
             />
           </a>
@@ -89,8 +107,12 @@
             </ul>
 
             <div class="nav-actions">
-              <button class="btn-secondary btn-header">Login</button>
-              <button class="btn-primary btn-header">Sign Up</button>
+              <button class="btn-secondary btn-header" data-modal="loginModal">
+                Login
+              </button>
+              <button class="btn-primary btn-header" data-modal="signupModal">
+                Sign Up
+              </button>
             </div>
           </nav>
         </div>
@@ -110,7 +132,11 @@
                 Where to grow your business as a photographer: site or social
                 media?
               </p>
-              <button type="button" class="btn-primary btn-register">
+              <button
+                type="button"
+                class="btn-primary btn-register"
+                data-modal="signupModal"
+              >
                 Register
               </button>
             </div>
@@ -123,8 +149,8 @@
               <img
                 src="assets/hero-illustration.jpg"
                 alt=""
-                height="407"
                 width="391"
+                height="407"
                 fetchpriority="high"
               />
             </picture>
@@ -140,41 +166,77 @@
             <p class="sub-text">
               We have been working with some Fortune 500+ clients
             </p>
-            <ul class="client-logos">
-              <li>
-                <img src="assets/clients/client-logo-1.svg" alt="" />
-              </li>
-              <li>
-                <img src="assets/clients/client-logo-2.svg" alt="" />
-              </li>
-              <li>
-                <img src="assets/clients/client-logo-3.svg" alt="" />
-              </li>
-              <li>
-                <img src="assets/clients/client-logo-4.svg" alt="" />
-              </li>
-              <li>
-                <img src="assets/clients/client-logo-5.svg" alt="" />
-              </li>
-              <li>
-                <img src="assets/clients/client-logo-6.svg" alt="" />
-              </li>
-              <li>
-                <img src="assets/clients/client-logo-3.svg" alt="" />
-              </li>
-            </ul>
+
+            <div class="client-slider">
+              <ul class="client-logos" id="clientLogos">
+                <li>
+                  <img
+                    src="assets/clients/client-logo-1.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="assets/clients/client-logo-2.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="assets/clients/client-logo-3.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="assets/clients/client-logo-4.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="assets/clients/client-logo-5.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="assets/clients/client-logo-6.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- feature cards and description content -->
-      <section>
+      <section class="feature-cards-section">
         <div class="container">
           <div class="our-client-content">
             <h2>Manage your entire community in a single system</h2>
             <p class="sub-text">Who is Nextcent suitable for?</p>
           </div>
-          <div class="feature-cards grid-gap">
+          <div class="feature-cards horizontal-scroll grid-gap">
             <div class="feature-card">
               <span class="icon-membership" aria-hidden="true"></span>
               <h3>Membership Organisations</h3>
@@ -216,6 +278,8 @@
               />
               <img
                 src="assets/pixelgrade-illustration.jpg"
+                width="442"
+                height="329"
                 alt=""
                 loading="lazy"
               />
@@ -231,8 +295,9 @@
                 sem. Donec elementum pulvinar odio.
               </p>
               <div class="learn-more-buttons">
-                <button type="button" class="btn-primary">Learn More</button>
-                <button type="button" class="btn-secondary">Learn More</button>
+                <button type="button" class="btn-primary btn-learn-more">
+                  Learn More
+                </button>
               </div>
             </div>
           </div>
@@ -253,28 +318,28 @@
               <div class="stat-item">
                 <span class="icon-members members" aria-hidden="true"></span>
                 <div class="stat-number">
-                  <h3>2,245,341</h3>
+                  <h3 class="counter" data-target="2245341">2,245,341</h3>
                   <p class="sub-text">Members</p>
                 </div>
               </div>
               <div class="stat-item">
                 <span class="icon-clubs" aria-hidden="true"></span>
                 <div class="stat-number">
-                  <h3>46,328</h3>
+                  <h3 class="counter" data-target="46328">46,328</h3>
                   <p class="sub-text">Clubs</p>
                 </div>
               </div>
               <div class="stat-item">
                 <span class="icon-booking" aria-hidden="true"></span>
                 <div class="stat-number">
-                  <h3>828,867</h3>
+                  <h3 class="counter" data-target="828867">828,867</h3>
                   <p class="sub-text">Event Bookings</p>
                 </div>
               </div>
               <div class="stat-item">
                 <span class="icon-payments"></span>
                 <div class="stat-number">
-                  <h3>1,926,436</h3>
+                  <h3 class="counter" data-target="1926436">1,926,436</h3>
                   <p class="sub-text">Payments</p>
                 </div>
               </div>
@@ -292,7 +357,13 @@
                 srcset="assets/howTo-illustration.svg"
                 type="image/svg+xml"
               />
-              <img src="assets/howTo-illustration.jpg" alt="" loading="lazy" />
+              <img
+                src="assets/howTo-illustration.jpg"
+                width="442"
+                height="433"
+                alt=""
+                loading="lazy"
+              />
             </picture>
             <div class="description-text-content">
               <h2>How to design your site footer like we did</h2>
@@ -328,9 +399,9 @@
                 <img
                   src="assets/review-customer.jpg"
                   alt="Representative from customer company giving testimonial"
-                  loading="lazy"
                   height="326"
                   width="326"
+                  loading="lazy"
                 />
               </picture>
             </div>
@@ -355,26 +426,62 @@
               <div class="meet-customers">
                 <ul class="meet-customer-logos">
                   <li>
-                    <img src="assets/clients/client-logo-1.svg" alt="" />
+                    <img
+                      src="assets/clients/client-logo-1.svg"
+                      alt=""
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
                   </li>
                   <li>
-                    <img src="assets/clients/client-logo-2.svg" alt="" />
+                    <img
+                      src="assets/clients/client-logo-2.svg"
+                      alt=""
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
                   </li>
                   <li>
-                    <img src="assets/clients/client-logo-3.svg" alt="" />
+                    <img
+                      src="assets/clients/client-logo-3.svg"
+                      alt=""
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
                   </li>
                   <li>
-                    <img src="assets/clients/client-logo-4.svg" alt="" />
+                    <img
+                      src="assets/clients/client-logo-4.svg"
+                      alt=""
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
                   </li>
                   <li>
-                    <img src="assets/clients/client-logo-5.svg" alt="" />
+                    <img
+                      src="assets/clients/client-logo-5.svg"
+                      alt=""
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
                   </li>
                   <li>
-                    <img src="assets/clients/client-logo-2.svg" alt="" />
+                    <img
+                      src="assets/clients/client-logo-2.svg"
+                      alt=""
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
                   </li>
                 </ul>
 
-                <div>
+                <div class="meet-customers-link">
                   <a href="#" class="custom-link"
                     >Meet all customers
                     <span class="icon-arrow-right" aria-hidden="true"></span
@@ -398,70 +505,86 @@
               membership income and lot's more.​
             </p>
           </div>
-          <div class="marketing-content-cards grid-gap">
+          <div class="marketing-content-cards horizontal-scroll grid-gap">
             <div class="marketing-card">
-              <picture
-                ><source
-                  srcset="assets/blog-streamlined.webp"
-                  type="image/webp" />
-                <img
-                  src="assets/blog-streamlined.jpg"
-                  alt=""
-                  width="368"
-                  height="286"
-                  loading="lazy"
-              /></picture>
-              <div class="marketing-card-text">
-                <h4>Creating Streamlined Safeguarding Processes with OneRen</h4>
-                <a href="#" class="custom-link"
-                  >Readmore
-                  <span class="icon-arrow-right" aria-hidden="true"></span
-                ></a>
-              </div>
+              <a href="#">
+                <picture
+                  ><source
+                    srcset="assets/blog-streamlined.webp"
+                    type="image/webp" />
+                  <img
+                    src="assets/blog-streamlined.jpg"
+                    alt=""
+                    width="368"
+                    height="286"
+                    loading="lazy"
+                /></picture>
+                <div class="marketing-card-text">
+                  <h4>
+                    Creating Streamlined Safeguarding Processes with OneRen
+                  </h4>
+                  <div class="custom-link">
+                    <span>
+                      Readmore
+                      <span class="icon-arrow-right" aria-hidden="true"></span
+                    ></span>
+                  </div>
+                </div>
+              </a>
             </div>
             <div class="marketing-card">
-              <picture
-                ><source
-                  srcset="assets/blog-safeguard.webp"
-                  type="image/webp" />
-                <img
-                  src="assets/blog-safeguard.jpg"
-                  alt=""
-                  width="368"
-                  height="286"
-                  loading="lazy"
-              /></picture>
-              <div class="marketing-card-text">
-                <h4>
-                  What are your safeguarding responsibilities and how can you
-                  manage them?
-                </h4>
+              <a href="#">
+                <picture
+                  ><source
+                    srcset="assets/blog-safeguard.webp"
+                    type="image/webp" />
+                  <img
+                    src="assets/blog-safeguard.jpg"
+                    alt=""
+                    width="368"
+                    height="286"
+                    loading="lazy"
+                /></picture>
+                <div class="marketing-card-text">
+                  <h4>
+                    What are your safeguarding responsibilities and how can you
+                    manage them?
+                  </h4>
+                  <div class="custom-link">
+                    <span>
+                      Readmore
+                      <span class="icon-arrow-right" aria-hidden="true"></span
+                    ></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="marketing-card">
+              <a href="#">
+                <picture
+                  ><source
+                    srcset="assets/blog-membership.webp"
+                    type="image/webp" />
+                  <img
+                    src="assets/blog-membership.jpg"
+                    alt=""
+                    width="368"
+                    height="286"
+                    loading="lazy"
+                /></picture>
+                <div class="marketing-card-text">
+                  <h4>
+                    Revamping the Membership Model with Triathlon Australia
+                  </h4>
 
-                <a href="#" class="custom-link"
-                  >Readmore
-                  <span class="icon-arrow-right" aria-hidden="true"></span
-                ></a>
-              </div>
-            </div>
-            <div class="marketing-card">
-              <picture
-                ><source
-                  srcset="assets/blog-membership.webp"
-                  type="image/webp" />
-                <img
-                  src="assets/blog-membership.jpg"
-                  alt=""
-                  width="368"
-                  height="286"
-                  loading="lazy"
-              /></picture>
-              <div class="marketing-card-text">
-                <h4>Revamping the Membership Model with Triathlon Australia</h4>
-                <a href="#" class="custom-link"
-                  >Readmore
-                  <span class="icon-arrow-right" aria-hidden="true"></span
-                ></a>
-              </div>
+                  <div class="custom-link">
+                    <span>
+                      Readmore
+                      <span class="icon-arrow-right" aria-hidden="true"></span
+                    ></span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -472,7 +595,11 @@
         <div class="container">
           <div class="demo-section-content">
             <h2>Pellentesque suscipit fringilla libero eu.</h2>
-            <button type="button" class="btn-primary btn-demo">
+            <button
+              type="button"
+              class="btn-primary btn-demo"
+              data-modal="demoModal"
+            >
               Get a demo
               <span class="icon-send" aria-hidden="true"></span>
             </button>
@@ -487,9 +614,15 @@
         <div class="footer-content">
           <!-- Logo -->
           <div class="copyright-social-media">
-            <div class="logo">
-              <img src="assets/logo-white.svg" alt="Nexcent logo" />
-            </div>
+            <a href="/" class="logo">
+              <img
+                src="assets/logo-white.png"
+                alt="Nexcent logo"
+                width="160"
+                height="25"
+                loading="lazy"
+              />
+            </a>
             <div class="copyright">
               <p class="sub-section footer-section">
                 Copyright © 2020 Nexcent ltd.
@@ -499,29 +632,40 @@
 
             <ul class="social-media-icons">
               <li>
-                <a href="#" aria-label="Visit our Instagram page">
+                <a
+                  href="#"
+                  aria-label="Visit our Instagram page"
+                  target="_blank"
+                >
                   <span class="icon-instagram" aria-hidden="true"></span
                 ></a>
               </li>
               <li>
-                <a href="#" aria-label="Visit our Dribble channel">
+                <a
+                  href="#"
+                  aria-label="Visit our Dribble channel"
+                  target="_blank"
+                >
                   <span class="icon-dribble" aria-hidden="true"></span
                 ></a>
               </li>
               <li>
-                <a href="#" aria-label="Visit our Twitter page">
+                <a href="#" aria-label="Visit our Twitter page" target="_blank">
                   <span class="icon-twitter" aria-hidden="true"></span
                 ></a>
               </li>
               <li>
-                <a href="#" aria-label="Visit our YouTube channel">
+                <a
+                  href="#"
+                  aria-label="Visit our YouTube channel"
+                  target="_blank"
+                >
                   <span class="icon-youtube" aria-hidden="true"></span
                 ></a>
               </li>
             </ul>
           </div>
 
-          <!-- <div class="footer-links"> -->
           <!-- Company -->
           <div class="company-support-list">
             <h4>Company</h4>
@@ -541,17 +685,16 @@
               <li><a href="#">Help Center</a></li>
               <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Legal</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Privacy policy</a></li>
               <li><a href="#">Status</a></li>
             </ul>
           </div>
-          <!-- </div> -->
 
           <!-- Stay Updated -->
           <div class="stay-updated">
             <h4>Stay up to date</h4>
 
-            <form class="email-form">
+            <form class="email-form" novalidate>
               <label for="email" class="visually-hidden"> Email address </label>
 
               <div class="input-email-field">
@@ -564,18 +707,150 @@
                 />
 
                 <button
-                  type="button"
+                  type="submit"
                   class="btn-send"
                   aria-label="Subscribe to newsletter"
                 >
                   <span class="icon-send" aria-hidden="true"></span>
                 </button>
               </div>
+              <small class="emailError"></small>
             </form>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <!-- Login Modal -->
+    <div
+      class="modal"
+      id="loginModal"
+      role="dialog"
+      aria-modal="true"
+      tabindex="-1"
+    >
+      <div class="modal-content">
+        <button class="modal-close" data-close>&times;</button>
+        <h3>Login</h3>
+
+        <form class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              name="loginEmail"
+              placeholder="Email address"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="loginPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div
+      class="modal"
+      id="signupModal"
+      aria-hidden="true"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div class="modal-content">
+        <button class="modal-close" data-close>&times;</button>
+        <h3>Create Account</h3>
+
+        <form class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input
+              type="text"
+              id="signupName"
+              name="signupName"
+              placeholder="Full Name"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">Email</label>
+            <input
+              type="email"
+              id="signupEmail"
+              name="signupEmail"
+              placeholder="Email address"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input
+              type="password"
+              id="signupPassword"
+              name="signupPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-primary">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Demo Modal -->
+    <div class="modal" id="demoModal" aria-hidden="true" tabindex="-1">
+      <div class="modal-content">
+        <button class="modal-close" data-close>&times;</button>
+        <h3>Request Demo</h3>
+
+        <form class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input
+              type="text"
+              id="companyName"
+              name="companyName"
+              placeholder="Company Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="demoEmail">Work Email</label>
+            <input
+              type="email"
+              id="demoEmail"
+              name="demoEmail"
+              placeholder="Work Email"
+              required
+            />
+            <small class="emailError"></small>
+          </div>
+
+          <button type="submit" class="btn-primary">Request Demo</button>
+        </form>
+      </div>
+    </div>
     <script src="script.js" defer></script>
   </body>
 </html>
