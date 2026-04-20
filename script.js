@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalForms = document.querySelectorAll(".modal-form");
 
+  // Heading animation on scroll
+  const scrollHeadings = document.querySelectorAll(".scroll-heading");
+
+  // Feature cards animation
+  const featureCards = document.querySelectorAll(".feature-card");
+
   /* UTIL FUNCTIONS*/
 
   function validateEmail(email) {
@@ -166,9 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* MODALS */
 
-  let lastFocusedButton;
+  let lastFocusedElement;
   modalButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      closeModal();
       lastFocusedElement = button;
 
       const modalId = button.dataset.modal;
@@ -194,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modalOverlay.addEventListener("click", closeModal);
 
   function closeModal() {
+    document.activeElement?.blur();
     modals.forEach((modal) => {
       modal.classList.remove("active");
       modal.setAttribute("aria-hidden", "true");
@@ -214,7 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* MODAL FORM VALIDATION */
-
   modalForms.forEach((form) => {
     const inputs = form.querySelectorAll("input");
 
@@ -254,7 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ENTER KEY NAVIGATION */
-
     inputs.forEach((input, index) => {
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
@@ -290,5 +296,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+  });
+
+  /* HEADING SCROLL ANIMATION */
+  const headingObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    },
+  );
+
+  scrollHeadings.forEach((heading) => {
+    headingObserver.observe(heading);
+  });
+
+  // FEATURE CARD ANIMATION
+  featureCards.forEach((card, index) => {
+    headingObserver.observe(card);
+
+    card.style.transitionDelay = `${index * 0.15}s`;
   });
 });

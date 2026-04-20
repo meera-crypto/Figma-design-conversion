@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Nexcent" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
@@ -162,7 +162,7 @@
       <section class="client-section">
         <div class="container">
           <div class="our-client-content">
-            <h2>Our Clients</h2>
+            <h2 class="scroll-heading">Our Clients</h2>
             <p class="sub-text">
               We have been working with some Fortune 500+ clients
             </p>
@@ -229,11 +229,13 @@
         </div>
       </section>
 
-      <!-- feature cards and description content -->
+      <!-- feature cards section -->
       <section class="feature-cards-section">
         <div class="container">
           <div class="our-client-content">
-            <h2>Manage your entire community in a single system</h2>
+            <h2 class="scroll-heading">
+              Manage your entire community in a single system
+            </h2>
             <p class="sub-text">Who is Nextcent suitable for?</p>
           </div>
           <div class="feature-cards horizontal-scroll grid-gap">
@@ -268,7 +270,7 @@
       </section>
 
       <!-- Descriptive content section -->
-      <section>
+      <section class="descriptive-content">
         <div class="container">
           <div class="description-content flex-gap">
             <picture class="pixelgrade-illustration">
@@ -285,7 +287,9 @@
               />
             </picture>
             <div class="description-text-content">
-              <h2>The unseen of spending three years at Pixelgrade</h2>
+              <h2 class="scroll-heading">
+                The unseen of spending three years at Pixelgrade
+              </h2>
               <p class="sub-section">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
                 amet justo ipsum. Sed accumsan quam vitae est varius fringilla.
@@ -309,7 +313,9 @@
         <div class="container">
           <div class="statistics-content-wrapper">
             <div class="statistics-text-content">
-              <h2>Helping a local <span>business reinvent itself</span></h2>
+              <h2 class="scroll-heading">
+                Helping a local <span>business reinvent itself</span>
+              </h2>
               <p class="sub-text">
                 We reached here with our hard work and dedication
               </p>
@@ -366,7 +372,9 @@
               />
             </picture>
             <div class="description-text-content">
-              <h2>How to design your site footer like we did</h2>
+              <h2 class="scroll-heading">
+                How to design your site footer like we did
+              </h2>
               <p class="sub-section">
                 Donec a eros justo. Fusce egestas tristique ultrices. Nam
                 tempor, augue nec tincidunt molestie, massa nunc varius arcu, at
@@ -482,7 +490,7 @@
                 </ul>
 
                 <div class="meet-customers-link">
-                  <a href="#" class="custom-link"
+                  <a href="#"
                     >Meet all customers
                     <span class="icon-arrow-right" aria-hidden="true"></span
                   ></a>
@@ -497,7 +505,7 @@
       <section class="marketing-section">
         <div class="container">
           <div class="marketing-section-content">
-            <h2>Caring is the new marketing</h2>
+            <h2 class="scroll-heading">Caring is the new marketing</h2>
             <p class="sub-text">
               The Nexcent blog is the best place to read about the latest
               membership insights, trends and more. See who's joining the
@@ -505,7 +513,7 @@
               membership income and lot's more.​
             </p>
           </div>
-          <div class="marketing-content-cards horizontal-scroll grid-gap">
+          <div class="marketing-content-cards grid-gap horizontal-scroll">
             <div class="marketing-card">
               <a href="#">
                 <picture
@@ -594,7 +602,9 @@
       <section class="demo-section">
         <div class="container">
           <div class="demo-section-content">
-            <h2>Pellentesque suscipit fringilla libero eu.</h2>
+            <h2 class="scroll-heading">
+              Pellentesque suscipit fringilla libero eu.
+            </h2>
             <button
               type="button"
               class="btn-primary btn-demo"
@@ -760,6 +770,10 @@
           </div>
 
           <button type="submit" class="btn-primary">Login</button>
+          <div class="modal-auth-switch">
+            New to nexcent?
+            <a href="#" data-modal="signupModal">Signup</a> here.
+          </div>
         </form>
       </div>
     </div>
@@ -813,6 +827,10 @@
           </div>
 
           <button type="submit" class="btn-primary">Sign Up</button>
+          <div class="modal-auth-switch">
+            Already have an account?
+            <a href="#" data-modal="loginModal">Login</a> here.
+          </div>
         </form>
       </div>
     </div>
