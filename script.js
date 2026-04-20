@@ -155,21 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   counters.forEach((counter) => observer.observe(counter));
 
-  /* CLIENT LOGO MARQUEE */
-
-  window.addEventListener("load", () => {
-    const slider = document.querySelector(".client-slider");
-    const logos = document.getElementById("clientLogos");
-
-    const sliderWidth = slider.offsetWidth;
-    let logosWidth = logos.scrollWidth;
-
-    while (logosWidth < sliderWidth * 2) {
-      logos.innerHTML += logos.innerHTML;
-      logosWidth = logos.scrollWidth;
-    }
-  });
-
   /* MODALS */
 
   let lastFocusedElement;

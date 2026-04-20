@@ -77,6 +77,16 @@ h4 {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 small {
   color: var(--default-error);
   font-size: 0.75rem;
@@ -99,7 +109,7 @@ section {
 /* Container */
 .container {
   width: min(1200px, 90%);
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 .flex-gap {
@@ -143,6 +153,10 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+picture {
+  display: block;
 }
 
 /* Buttons */
@@ -240,6 +254,8 @@ header {
   gap: 30px;
   margin: 0 0 32px;
   padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .nav-list a {
@@ -334,14 +350,27 @@ header {
 
 .client-logos {
   display: flex;
-  align-items: center;
   gap: 3rem;
-  width: max-content;
+  margin: 0;
+  padding: 0;
+  animation: marqueeScroll 30s linear infinite;
+  width: fit-content;
 }
 
 .client-logos li {
   list-style: none;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 80px;
+}
+
+/* Client Slider Styles */
+.client-track {
+  overflow: hidden;
+  position: relative;
 }
 
 /* feature Card Styling */
@@ -751,11 +780,6 @@ footer {
     max-width: 542px;
   }
 
-  .client-logos {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .feature-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
@@ -860,10 +884,6 @@ footer {
 
   .btn-mobile {
     display: none;
-  }
-
-  .client-logos {
-    grid-template-columns: repeat(7, 1fr);
   }
 
   .statistics-content-wrapper {

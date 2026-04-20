@@ -1,18 +1,11 @@
 /* Client Logos  */
-
-@keyframes scroll {
-  to {
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
     transform: translateX(-50%);
   }
-}
-
-/* Pause on hover */
-.client-slider:hover .client-logos {
-  animation-play-state: paused;
-}
-
-.client-logos {
-  animation: scroll 40s linear infinite;
 }
 
 /*Horizontal Scroll */
