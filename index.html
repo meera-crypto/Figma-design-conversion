@@ -7,7 +7,6 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Nexcent" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
     <title>Lessons and insights from 8 years | Nexcent</title>
 
@@ -33,13 +32,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
 
     <!-- Styles -->
     <link
@@ -152,6 +144,7 @@
                 width="391"
                 height="407"
                 fetchpriority="high"
+                loading="eager"
               />
             </picture>
           </div>
@@ -168,62 +161,121 @@
             </p>
 
             <div class="client-slider">
-              <ul class="client-logos" id="clientLogos">
-                <li>
-                  <img
-                    src="assets/clients/client-logo-1.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="assets/clients/client-logo-2.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="assets/clients/client-logo-3.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="assets/clients/client-logo-4.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="assets/clients/client-logo-5.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="assets/clients/client-logo-6.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                </li>
-              </ul>
+              <div class="client-track">
+                <ul class="client-logos">
+                  <!-- First Set of Logos -->
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-1.svg"
+                      alt="Client Logo 1"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-2.svg"
+                      alt="Client Logo 2"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-3.svg"
+                      alt="Client Logo 3"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-4.svg"
+                      alt="Client Logo 4"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-5.svg"
+                      alt="Client Logo 5"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-6.svg"
+                      alt="Client Logo 6"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+
+                  <!-- Duplicate Set of Logos (Required for seamless infinite scroll) -->
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-1.svg"
+                      alt="Client Logo 1"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-2.svg"
+                      alt="Client Logo 2"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-3.svg"
+                      alt="Client Logo 3"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-4.svg"
+                      alt="Client Logo 4"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-5.svg"
+                      alt="Client Logo 5"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="assets/clients/client-logo-6.svg"
+                      alt="Client Logo 6"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                    />
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
