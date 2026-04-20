@@ -37,6 +37,38 @@
   scrollbar-width: none;
 }
 
+/* h2 scroll animation */
+.scroll-heading {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-heading.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* meet customers logo hover */
+.meet-customer-logos img:hover {
+  transform: translateY(-6px);
+}
+
+/* feature card appear */
+.feature-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.feature-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (min-width: 767px) {
   .horizontal-scroll {
     display: grid;
