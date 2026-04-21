@@ -1,3 +1,26 @@
+/* Regular */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+/* Semi-Bold */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
 :root {
   --font-primary: "Roboto", sans-serif;
 

@@ -77,16 +77,6 @@ h4 {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-a {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
 small {
   color: var(--default-error);
   font-size: 0.75rem;
@@ -550,6 +540,7 @@ header {
   flex-direction: column;
   height: 100%;
   max-width: 400px;
+  will-change: transform;
 }
 
 .marketing-card img {
@@ -615,10 +606,13 @@ footer {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: start;
   padding: 30px 0;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "b c"
+    "a d";
 }
 
 .copyright-social-media {
@@ -707,16 +701,6 @@ footer {
 
 .btn-send .icon-send {
   font-size: 18px;
-}
-
-.footer-content {
-  display: grid;
-  gap: 2rem;
-
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "b c"
-    "a d";
 }
 
 .copyright-social-media {
@@ -957,14 +941,15 @@ footer {
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  visibility: hidden;
   transition: 0.3s ease;
-  z-index: 999;
+  z-index: 900;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .modal-overlay.active {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
 }
 
 .modal {
