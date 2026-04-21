@@ -734,21 +734,21 @@ footer {
   border: 0;
 }
 
-/* images aspect ratio */
-.hero-illustration {
-  aspect-ratio: 391 / 407;
-}
-
-.pixelgrade-illustration {
-  aspect-ratio: 442 / 329;
-}
-
-.footer-designer-illustration {
-  aspect-ratio: 442 / 433;
-}
-
 /* Min-width -  767px */
 @media (min-width: 767px) {
+  /* images aspect ratio */
+  .hero-illustration {
+    aspect-ratio: 391 / 407;
+  }
+
+  .pixelgrade-illustration {
+    aspect-ratio: 442 / 329;
+  }
+
+  .footer-designer-illustration {
+    aspect-ratio: 442 / 433;
+  }
+
   .hero-content {
     flex-direction: row;
     align-items: center;
