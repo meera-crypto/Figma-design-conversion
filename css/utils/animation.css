@@ -8,6 +8,10 @@
   }
 }
 
+.client-logos:hover {
+  animation-play-state: paused;
+}
+
 /*Horizontal Scroll */
 .horizontal-scroll {
   display: flex;
