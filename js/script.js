@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const featureCards = document.querySelectorAll(".feature-card");
 
   /* UTIL FUNCTIONS*/
-
   function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }

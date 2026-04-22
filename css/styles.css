@@ -259,7 +259,7 @@ header {
 /* Buttons */
 .nav-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 12px;
 }
 
@@ -279,11 +279,9 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 32px;
-  height: 32px;
   background: none;
-  border: 1px solid var(--primary-color);
   cursor: pointer;
+  color: var(--neutral-black);
 }
 
 .menu-close span {
@@ -338,10 +336,9 @@ header {
 
 .client-logos {
   display: flex;
-  gap: 3rem;
   margin: 0;
   padding: 0;
-  animation: marqueeScroll 30s linear infinite;
+  animation: marqueeScroll 15s linear infinite;
   width: fit-content;
 }
 
@@ -351,7 +348,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 100px;
+  min-width: 80px;
   height: 80px;
 }
 
@@ -657,6 +654,7 @@ footer {
 .company-support-list ul li a {
   color: var(--neutral-color);
   transition: all 0.3s ease;
+  padding: 0;
 }
 
 .input-email-field {
@@ -736,21 +734,21 @@ footer {
   border: 0;
 }
 
+/* images aspect ratio */
+.hero-illustration {
+  aspect-ratio: 391 / 407;
+}
+
+.pixelgrade-illustration {
+  aspect-ratio: 442 / 329;
+}
+
+.footer-designer-illustration {
+  aspect-ratio: 442 / 433;
+}
+
 /* Min-width -  767px */
 @media (min-width: 767px) {
-  /* images aspect ratio */
-  .hero-illustration {
-    aspect-ratio: 391 / 407;
-  }
-
-  .pixelgrade-illustration {
-    aspect-ratio: 442 / 329;
-  }
-
-  .footer-designer-illustration {
-    aspect-ratio: 442 / 433;
-  }
-
   .hero-content {
     flex-direction: row;
     align-items: center;
@@ -764,6 +762,10 @@ footer {
 
   .our-client-content h2 {
     max-width: 542px;
+  }
+
+  .client-logos {
+    gap: 3rem;
   }
 
   .feature-cards {
@@ -859,7 +861,6 @@ footer {
   }
 
   .nav-actions {
-    flex-direction: row;
     margin-left: 60px;
   }
 
@@ -901,26 +902,25 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
   }
-  .marketing-card:hover img {
-    transform: scale(1.08);
-  }
-  .marketing-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease;
-  }
-
-  .marketing-card:hover {
-    transform: translateY(-4px);
-  }
 
   .marketing-card:hover span {
     text-decoration: underline;
   }
 
-  .marketing-card-text {
-    flex-grow: 1;
+  .marketing-card a {
+    padding: 0;
+  }
+
+  .marketing-card {
+    overflow: hidden;
+  }
+
+  .marketing-card img {
+    transition: transform 0.5s ease;
+  }
+
+  .marketing-card:hover img {
+    transform: scale(1.1);
   }
 
   /* Modals */
@@ -934,6 +934,16 @@ footer {
   .statistics-content {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .grid-gap {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1155px) {
+  .nav-list {
+    gap: 0;
   }
 }
 
@@ -988,8 +998,9 @@ footer {
   right: 16px;
   border: none;
   background: none;
-  font-size: 22px;
+  font-size: 23px;
   cursor: pointer;
+  color: var(--neutral-black);
 }
 
 .modal-form {
@@ -1034,4 +1045,9 @@ footer {
 .modal-form label:has(+ input[required])::after {
   content: " *";
   color: var(--default-error);
+}
+
+.modal-close:hover {
+  background-color: var(--neutral-black);
+  color: white;
 }

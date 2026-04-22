@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header Section -->
     <header>
       <div class="container">
@@ -75,12 +75,14 @@
             </button>
 
             <ul class="nav-list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">Feature</a></li>
-              <li><a href="#">Product</a></li>
-              <li><a href="#">Testimonial</a></li>
-              <li><a href="#">FAQ</a></li>
+              <li><a href="/home" data-page="home">Home</a></li>
+              <li><a href="/service" data-page="service">Service</a></li>
+              <li><a href="/feature" data-page="feature">Feature</a></li>
+              <li><a href="/product" data-page="product">Product</a></li>
+              <li>
+                <a href="/testimonial" data-page="testimonial">Testimonial</a>
+              </li>
+              <li><a href="/faq" data-page="faq">FAQ</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -98,7 +100,7 @@
     <div class="menu-overlay"></div>
 
     <!-- Main Section -->
-    <main id="main">
+    <main id="main-content">
       <!-- Hero section -->
       <section class="hero-section">
         <div class="container">
@@ -120,11 +122,18 @@
 
             <picture class="hero-illustration">
               <source
-                srcset="assets/hero-illustration.svg"
-                type="image/svg+xml"
+                srcset="
+                  assets/hero-illustration.webp    1x,
+                  assets/hero-illustration_2x.webp 2x
+                "
+                type="image/webp"
               />
               <img
                 src="assets/hero-illustration.jpg"
+                srcset="
+                  assets/hero-illustration.jpg    1x,
+                  assets/hero-illustration_2x.jpg 2x
+                "
                 alt=""
                 width="391"
                 height="407"
@@ -311,11 +320,18 @@
           <div class="description-content flex-gap">
             <picture class="pixelgrade-illustration">
               <source
-                srcset="assets/pixelgrade-illustration.svg"
-                type="image/svg+xml"
+                srcset="
+                  assets/pixelgrade-illustration.webp    1x,
+                  assets/pixelgrade-illustration_2x.webp 2x
+                "
+                type="image/webp"
               />
               <img
                 src="assets/pixelgrade-illustration.jpg"
+                srcset="
+                  assets/pixelgrade-illustration.jpg    1x,
+                  assets/pixelgrade-illustration_2x.jpg 2x
+                "
                 width="442"
                 height="329"
                 alt=""
@@ -396,11 +412,18 @@
           <div class="description-content flex-gap">
             <picture class="footer-designer-illustration">
               <source
-                srcset="assets/howTo-illustration.svg"
-                type="image/svg+xml"
+                srcset="
+                  assets/howTo-illustration.webp    1x,
+                  assets/howTo-illustration_2x.webp 2x
+                "
+                type="image/webp"
               />
               <img
                 src="assets/howTo-illustration.jpg"
+                srcset="
+                  assets/howTo-illustration.jpg    1x,
+                  assets/howTo-illustration_2x.jpg 2x
+                "
                 width="442"
                 height="433"
                 alt=""
@@ -437,11 +460,18 @@
             <div class="review-image">
               <picture>
                 <source
-                  srcset="assets/review-customer.webp"
+                  srcset="
+                    assets/review-customer.webp    1x,
+                    assets/review-customer_2x.webp 2x
+                  "
                   type="image/webp"
                 />
                 <img
                   src="assets/review-customer.jpg"
+                  srcset="
+                    assets/review-customer.jpg    1x,
+                    assets/review-customer_2x.jpg 2x
+                  "
                   alt="Representative from customer company giving testimonial"
                   height="326"
                   width="326"
@@ -554,10 +584,17 @@
               <a href="#">
                 <picture
                   ><source
-                    srcset="assets/blog-streamlined.webp"
+                    srcset="
+                      assets/blog-streamlined.webp    1x,
+                      assets/blog-streamlined_2x.webp 2x
+                    "
                     type="image/webp" />
                   <img
                     src="assets/blog-streamlined.jpg"
+                    srcset="
+                      assets/blog-streamlined.jpg    1x,
+                      assets/blog-streamlined_2x.jpg 2x
+                    "
                     alt=""
                     width="368"
                     height="286"
@@ -580,10 +617,17 @@
               <a href="#">
                 <picture
                   ><source
-                    srcset="assets/blog-safeguard.webp"
+                    srcset="
+                      assets/blog-safeguard.webp    1x,
+                      assets/blog-safeguard_2x.webp 2x
+                    "
                     type="image/webp" />
                   <img
                     src="assets/blog-safeguard.jpg"
+                    srcset="
+                      assets/blog-safeguard.jpg    1x,
+                      assets/blog-safeguard_2x.jpg 2x
+                    "
                     alt=""
                     width="368"
                     height="286"
@@ -607,10 +651,17 @@
               <a href="#">
                 <picture
                   ><source
-                    srcset="assets/blog-membership.webp"
+                    srcset="
+                      assets/blog-membership.webp    1x,
+                      assets/blog-membership_2x.webp 2x
+                    "
                     type="image/webp" />
                   <img
                     src="assets/blog-membership.jpg"
+                    srcset="
+                      assets/blog-membership.jpg    1x,
+                      assets/blog-membership_2x.jpg 2x
+                    "
                     alt=""
                     width="368"
                     height="286"
@@ -654,7 +705,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -905,6 +955,6 @@
         </form>
       </div>
     </div>
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
