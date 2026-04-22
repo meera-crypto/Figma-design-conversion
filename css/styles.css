@@ -31,13 +31,6 @@ body {
   top: 0;
 }
 
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(76, 175, 79, 0.2);
-}
-
 h1,
 h2,
 h3,
@@ -119,16 +112,15 @@ a {
   padding: 8px 12px;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
   color: var(--primary-dark);
 }
 
-/* Active */
 a:active {
   color: var(--primary-dark);
   transform: translateY(1px);
-}
+} */
 
 li {
   list-style: none;
@@ -172,6 +164,13 @@ button {
   background: var(--primary-dark);
   color: white;
   border: 1px solid transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(76, 175, 79, 0.2);
 }
 
 .logo {
