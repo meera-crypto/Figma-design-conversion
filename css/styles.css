@@ -124,13 +124,6 @@ a:hover {
   color: var(--primary-dark);
 }
 
-/* Focus */
-a:focus-visible {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
 /* Active */
 a:active {
   color: var(--primary-dark);
@@ -176,13 +169,15 @@ button {
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary-dark);
-  color: var(--primary-dark);
+  background: var(--primary-dark);
+  color: white;
+  border: 1px solid transparent;
 }
 
 .logo {
   width: 160px;
   margin-right: auto;
+  padding: 0;
 }
 
 /* Header */
@@ -571,6 +566,14 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+.marketing-card:focus-within {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 8px;
+  transform: translateY(-6px);
+  transition: 0.3s ease;
 }
 
 /* demo section */
@@ -1050,4 +1053,35 @@ footer {
 .modal-close:hover {
   background-color: var(--neutral-black);
   color: white;
+}
+
+/* 404 page */
+
+.custom-error-page {
+  background-color: #f7fff7;
+}
+
+.error-page {
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.error-page h1 {
+  color: var(--primary-color);
+}
+
+.return-home a {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+}
+
+.return-home:hover a {
+  text-decoration: none;
+  background-color: var(--primary-dark);
 }
