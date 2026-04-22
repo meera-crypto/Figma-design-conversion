@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let count = 0;
 
     const updateCounter = () => {
-      const increment = target / 150;
+      const increment = target / 25;
 
       if (count < target) {
         count += increment;
