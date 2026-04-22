@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const featureCards = document.querySelectorAll(".feature-card");
 
   /* UTIL FUNCTIONS*/
-
   function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
@@ -125,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let count = 0;
 
     const updateCounter = () => {
-      const increment = target / 150;
+      const increment = target / 25;
 
       if (count < target) {
         count += increment;
