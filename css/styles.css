@@ -215,6 +215,11 @@ header {
   transform: translateX(0);
 }
 
+.nav-link[aria-current="page"] {
+  color: var(--primary-color);
+  border-left: solid 2px var(--primary-color);
+}
+
 /* Navigation List */
 .nav-list {
   display: flex;
@@ -846,6 +851,12 @@ footer {
   .nav-list {
     flex-direction: row;
     margin: 0;
+  }
+
+  .nav-link[aria-current="page"] {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    border-left: 0;
   }
 
   .nav-actions {
