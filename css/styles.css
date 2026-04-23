@@ -20,7 +20,7 @@ body {
   top: -40px;
   left: 0;
   background: #4caf4f;
-  color: white;
+  color: var(--default-color);
   padding: 8px 16px;
   text-decoration: none;
   z-index: 200;
@@ -80,12 +80,8 @@ section {
   margin: 0;
 }
 
-.sub-text {
+p {
   font-size: var(--fs-body);
-  color: var(--body-text);
-}
-.sub-section {
-  font-size: var(--fs-body-sm);
   color: var(--body-text);
 }
 
@@ -112,15 +108,9 @@ a {
   padding: 8px 12px;
 }
 
-/* a:hover {
+a:hover {
   text-decoration: underline;
-  color: var(--primary-dark);
 }
-
-a:active {
-  color: var(--primary-dark);
-  transform: translateY(1px);
-} */
 
 li {
   list-style: none;
@@ -162,7 +152,7 @@ button {
 
 .btn-secondary:hover {
   background: var(--primary-dark);
-  color: white;
+  color: var(--default-color);
   border: 1px solid transparent;
 }
 
@@ -229,6 +219,11 @@ header {
   transform: translateX(0);
 }
 
+.nav-link[aria-current="page"] {
+  color: var(--primary-color);
+  border-left: solid 2px var(--primary-color);
+}
+
 /* Navigation List */
 .nav-list {
   display: flex;
@@ -236,7 +231,6 @@ header {
   gap: 30px;
   margin: 0 0 32px;
   padding: 0;
-  overflow-x: auto;
   white-space: nowrap;
 }
 
@@ -244,10 +238,13 @@ header {
   color: var(--navigation-text);
   font-size: 1rem;
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 .nav-list a:hover {
   color: var(--primary-color);
+  background-color: rgb(235, 235, 235);
+  text-decoration: none;
 }
 
 /* Buttons */
@@ -473,7 +470,7 @@ header {
   width: 100%;
 }
 
-.customer-review-text .sub-text {
+.customer-review-text p {
   margin-top: 0;
 }
 
@@ -482,7 +479,7 @@ header {
   color: var(--primary-color);
 }
 
-.reviewer-details .sub-text {
+.reviewer-details p {
   color: var(--neutral-gray);
   margin-top: 0;
 }
@@ -523,7 +520,6 @@ header {
 
 .marketing-content-cards {
   display: flex;
-  overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 10px;
 }
@@ -656,7 +652,11 @@ footer {
 .company-support-list ul li a {
   color: var(--neutral-color);
   transition: all 0.3s ease;
-  padding: 0;
+  padding: 5px 0;
+}
+
+.company-support-list ul li {
+  margin-bottom: 12px;
 }
 
 .input-email-field {
@@ -719,10 +719,6 @@ footer {
 
 .stay-updated {
   grid-area: d;
-}
-
-.company-support-list ul li {
-  margin-bottom: 12px;
 }
 
 .visually-hidden {
@@ -862,6 +858,12 @@ footer {
     margin: 0;
   }
 
+  .nav-link[aria-current="page"] {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    border-left: 0;
+  }
+
   .nav-actions {
     margin-left: 60px;
   }
@@ -988,7 +990,7 @@ footer {
 }
 
 .modal-content {
-  background: white;
+  background: var(--default-color);
   padding: 32px;
   border-radius: 8px;
   position: relative;
@@ -1028,7 +1030,7 @@ footer {
 }
 
 .modal-auth-switch {
-  font-size: var(--fs-body-sm);
+  font-size: var(--fs-body);
   text-align: center;
 }
 
@@ -1040,7 +1042,7 @@ footer {
 .form-group {
   display: flex;
   flex-direction: column;
-  font-size: var(--fs-body-sm);
+  font-size: var(--fs-body);
 }
 
 /* Required star */
@@ -1051,7 +1053,7 @@ footer {
 
 .modal-close:hover {
   background-color: var(--neutral-black);
-  color: white;
+  color: var(--default-color);
 }
 
 /* 404 page */
@@ -1076,7 +1078,7 @@ footer {
 
 .return-home a {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--default-color);
   border-radius: 4px;
 }
 
