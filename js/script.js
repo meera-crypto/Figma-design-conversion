@@ -196,6 +196,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (lastFocusedElement) {
       lastFocusedElement.focus();
     }
+
+    modals.forEach((modal) => {
+      modal.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    });
+
+    modalOverlay.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeModal();
+    });
   }
 
   document.addEventListener("keydown", (e) => {
