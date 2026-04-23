@@ -108,6 +108,10 @@ a {
   padding: 8px 12px;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 li {
   list-style: none;
 }
@@ -239,7 +243,8 @@ header {
 
 .nav-list a:hover {
   color: var(--primary-color);
-  background-color: var(--default-color);
+  background-color: rgb(235, 235, 235);
+  text-decoration: none;
 }
 
 /* Buttons */
@@ -647,7 +652,11 @@ footer {
 .company-support-list ul li a {
   color: var(--neutral-color);
   transition: all 0.3s ease;
-  padding: 0;
+  padding: 5px 0;
+}
+
+.company-support-list ul li {
+  margin-bottom: 12px;
 }
 
 .input-email-field {
@@ -710,10 +719,6 @@ footer {
 
 .stay-updated {
   grid-area: d;
-}
-
-.company-support-list ul li {
-  margin-bottom: 12px;
 }
 
 .visually-hidden {
