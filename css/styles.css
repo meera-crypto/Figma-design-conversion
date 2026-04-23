@@ -12,7 +12,7 @@ body {
   color: var(--body-text);
   margin: 0;
   font-weight: 400;
-  line-height: 1.35rem;
+  line-height: 1.5rem;
 }
 
 .skip-link {
@@ -133,6 +133,7 @@ button {
   border: 1px solid transparent;
   cursor: pointer;
   font-size: var(--fs-body);
+  transition: all 0.4s ease;
 }
 
 .btn-primary {
@@ -655,10 +656,6 @@ footer {
   padding: 5px 0;
 }
 
-.company-support-list ul li {
-  margin-bottom: 12px;
-}
-
 .input-email-field {
   display: flex;
   align-items: center;
@@ -1036,6 +1033,7 @@ footer {
 
 .modal-auth-switch a {
   font-size: var(--fs-body);
+  padding: 0;
 }
 
 /* Form group layout */
@@ -1057,7 +1055,6 @@ footer {
 }
 
 /* 404 page */
-
 .custom-error-page {
   background-color: #f7fff7;
 }
